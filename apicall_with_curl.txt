@@ -1,0 +1,53 @@
+Sending API request using curl (without POSTMAN)
+-----------------------------------------------------------------------------------------------------
+#curl --location --request POST {URL} -d '{REQUEST BODY}' --header "Content-Type: application/json"
+
+#curl --location --request POST "URL" \
+-H "Header1" \
+-H "Header2" \
+-H "Header3" \
+-d "BODY"
+
+
+Rules:
+- \ are mandatory in endlines, except the most bottom
+-
+
+
+Example:
+curl --location --request POST 'https://myim3api-stg.indosatooredoo.com/api/v1/webank/validate' \
+--header 'Authorization: 642d1cc69d90666962726e' \
+--header 'X-IMI-CHANNEL: V2MYIM3' \
+--header 'X-IMI-TOKENID: CV235W7BL9JU6CUQNM8CF8EW7A9KXOL6HQRU' \
+--header 'Content-Type: application/json' \
+--data '{"tid":"1234567890"}'
+
+
+curl --location --request POST 'https://myim3api-stg.indosatooredoo.com/api/v1/webank/validate' \
+-H 'Authorization: 642d1cc69d90666962726e' \
+-H 'X-IMI-CHANNEL: V2MYIM3' \
+-H 'X-IMI-TOKENID: CV235W7BL9JU6CUQNM8CF8EW7A9KXOL6HQRU' \
+-H 'Content-Type: application/json' \
+-d '{"tid":"1234567890"}'
+
+curl --location --request POST https://ucan-uat.qnb.co.id:18086/openapi/get-account-info
+-H "Content-Type: application/json"
+-d '{
+    "app_id": "MyIM3",
+    "time_stamp": "1612241320000",
+    "nonce_str": "1t8g630djzg4o46j",
+    "user_id": "0448DFE9D940CBDB8E754CCAE2F37201B6047CB959D9D85045AC543242A5C768",
+    "sign": "c9268bf49f461ec901b809bc2a4a137dfc01e880f0698b6e4bf74a9e38652267"
+}'
+
+
+# curl --location --request POST '10.34.218.116:8900/api/v1/packages/getpackagecategory' 
+--header 'Authorization: 642d1cc69d90666962726e' 
+--header 'X-IMI-SERVICEKEY: {{SERVICEKEY}}' 
+--header 'x-imi-oauth: ' 
+--header 'X-IMI-CHANNEL: LTS' 
+--header 'X-IMI-LANGUAGE: EN' 
+--header 'X-IMI-TOKENID: 3360LE985DNL8ID8I772VNDO5X8E0O75KC1F ' 
+--header '75879296b4599fb91eb818249b: ' 
+--header 'Content-Type: application/json' 
+--data '{"servicename": "GET PACKAGE CATEGORY"}'
